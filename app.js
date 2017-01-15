@@ -83,6 +83,7 @@ MongoClient.connect(mdbUrl, function(err, database) {
             contact: req.body.contact,
             zomato: req.body.zomato,
             photo: req.body.photo,
+            photoslink: req.body.photoslink,
             createdate: moment().format('LLL'),
         };
         db.collection('restaurants')
@@ -129,6 +130,7 @@ MongoClient.connect(mdbUrl, function(err, database) {
             contact: req.body.contact,
             zomato: req.body.zomato,
             photo: req.body.photo,
+            photoslink: req.body.photoslink,
             updatedate: moment().format('LLL'),
         };
         restaurantCollection.updateOne({ _id: new ObjectId(restaurantId)},{$set: datasave}, function(err, restaurant) {
