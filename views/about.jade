@@ -1,0 +1,66 @@
+extends layout
+
+block content
+  .w3-top.w3-hide-small
+      ul#myNavbar.w3-navbar.w3-xlarge.w3-black.w3-opacity.w3-hover-opacity-off
+        li
+          a(href='/') HOME
+        li
+          a(href='/restaurants') RESTAURANTS
+        li
+          a(href='/restaurants/create') ADD A RESTAURANT
+        li
+          a(href='/about') ABOUT
+  #about.w3-container.w3-padding-64.w3-blue-gray.w3-xlarge
+      .w3-content
+        h1.w3-center.w3-jumbo(style='margin-bottom:64px') About
+        p
+          .w3-card-2.w3-round.w3-light-gray
+            .w3-container.w3-black
+              h4.w3-center.w3-xlarge About Us
+              .w3-center.w3-gray
+                    img.w3-circle(src='images/elijah.png', style='height:300px;width:210px', alt='Avatar')
+                    img.w3-circle(src='images/pier.png', style='height:300px;width:210px', alt='Avatar')
+              hr
+              p
+                i.fa.fa-user-circle-o.fa-fw.w3-margin-right.w3-text-theme
+                strong  John Elijah B. de Asis and Pierangelo P. Martin
+              p
+                i.fa.fa-graduation-cap.fa-fw.w3-margin-right.w3-text-theme
+                strong  Bachelor of Science in Computer Engineering
+              p
+                i.fa.fa-pencil.fa-fw.w3-margin-right.w3-text-theme
+                strong  Polytechnic University of the Philippines - Manila
+              p
+                i.fa.fa-facebook-square.fa-fw.w3-margin-right.w3-text-theme
+                strong
+                   a(href='https://www.facebook.com/elijahdeasis30.el')  Elijah  
+                   | and  
+                   a(href='https://www.facebook.com/pierremrtin')  Pier
+
+        p
+          | This web application is created by John Elijah B. de Asis and Pierangelo P. Martin for education purposes. This contains the Top Restaurants in Manila in the year 2017 according to  
+          strong Zomato  
+          | . These restaurants are the most popular based on popularity to customers and critics. You can add restaurant to the list, edit and delete them.
+        
+        p
+          strong What Zomato do?
+          |  Zomato's mission is to ensure that nobody has a bad meal. They do this by helping people discover great places around them, building amazing experiences around dining and enabling restaurants to create amazing experiences.
+          a(href='https://www.zomato.com/manila/top-restaurants')
+            img.w3-circle.w3-right(src='https://b.zmtcdn.com/images/logo/zomato_logo.svg', style='width:150px', alt='Zomato')
+        p They also have different themes like Restaurant Against Hunger. You can check participating restaurants for Restaurants Against Hunger  
+          a(href='https://www.zomato.com/manila/restaurants-against-hunger') here 
+        img.w3-margin-top.w3-margin-bottom(src='https://b.zmtcdn.com/data/collections/466945a5b00280d51aff8ae17907a41a_1480064490.jpg', style='width:100%', alt='Restaurant')
+
+        h1
+          b To Find more best restaurants, cafes, and bars in Metro Manila, you can visit zomato.com! 
+    footer.w3-center.w3-black.w3-padding-48.w3-xxlarge
+      i.fa.fa-github.w3-hover-text-yellow
+      i.fa.fa-facebook-official.w3-hover-text-indigo
+      i.fa.fa-instagram.w3-hover-text-purple
+      i.fa.fa-pinterest-p.w3-hover-text-red
+      i.fa.fa-twitter.w3-hover-text-light-blue
+      i.fa.fa-linkedin.w3-hover-text-indigo
+      p 
+        h6
+          span.w3-xlarge © 2017 COEN 3463 Team 12

@@ -1,0 +1,204 @@
+extends layout
+
+block content
+    .w3-top.w3-hide-small
+      ul#myNavbar.w3-navbar.w3-xlarge.w3-black.w3-opacity.w3-hover-opacity-off
+        li
+          a(href='/') HOME
+        li
+          a(href='/restaurants') RESTAURANTS
+        li
+          a(href='/restaurants/create') ADD A RESTAURANT
+        li
+          a(href='#about') ABOUT
+        
+    
+
+    header#home.bgimg.w3-display-container
+      .w3-display-bottomleft.w3-padding
+        a(href='https://www.zomato.com/manila/top-restaurants')
+          span.w3-tag.w3-xlarge From Zomato.com
+      .w3-display-middle.w3-center
+        span.w3-text-black.w3-hide-small(style='font-size:100px')
+          | 2017 Top
+          br
+          | Manila Restaurants
+        span.w3-text-white.w3-hide-large.w3-hide-medium(style='font-size:60px')
+          b
+            | 2017 Top
+            br
+            | Manila Restaurants
+        p
+          a.w3-xxlarge.w3-padding(href='#')
+        
+        p
+          a.w3-btn.w3-xxlarge.w3-padding(href='/restaurants') View Restaurants
+    
+
+    #menu.w3-container.w3-black.w3-padding-64.w3-xxlarge
+      .w3-content
+        h1.w3-center.w3-xxlarge(style='margin-bottom:64px') If you want to look for other collections from Zomato. You can explore curated lists of top restaurants, cafes, pubs, and bars in and around Metro Manila, based on trends here
+        
+      .w3-container
+        .w3-display-container.mySlides
+          img(src='https://b.zmtcdn.com/data/collections/9a5b36fa50b087fb43bb323d41ac04df_1481875135.jpg', style='width:100%')
+          .w3-display-topright.w3-container.w3-padding-32
+            a(href='https://www.zomato.com/manila/foodee-global-concepts-restaurants')
+              span.w3-black.w3-padding-large.w3-animate-bottom Best of 2016
+        .w3-display-container.mySlides
+          img(src='https://b.zmtcdn.com/data/collections/c46a134600d2a5363fe7b6407f1a1529_1472715952.jpg', style='width:100%')
+          .w3-display-bottomleft.w3-container.w3-padding-32
+            a(href='https://www.zomato.com/manila/best-of-2016')  
+              span.w3-black.w3-padding-large.w3-animate-bottom Foodee Global Concepts Restaurants
+        .w3-display-container.mySlides
+          img(src='https://b.zmtcdn.com/data/collections/a41f285743aa432784d4995eb5e898b9_1421673615.jpg', style='width:100%')
+          .w3-display-middle.w3-container.w3-padding-32
+            a(href='https://www.zomato.com/manila/unusual-restaurants')  
+              span.w3-black.w3-padding-large.w3-animate-bottom Unusual Restaurants
+        .w3-display-container.mySlides
+          img(src='https://b.zmtcdn.com/data/collections/c1cb32a1d56ff16fb4a05e41238802ac_1474006893.jpg', style='width:100%')
+          .w3-display-bottomleft.w3-container.w3-padding-32
+            a(href='https://www.zomato.com/manila/birthday-celebrations')
+              span.w3-black.w3-padding-large.w3-animate-bottom Best Birthday Deals
+        .w3-display-container.mySlides
+          img(src='https://b.zmtcdn.com/data/collections/2661c47bf984e4648b013b2f8c52fbe8_1475836980.jpg', style='width:100%')
+          .w3-display-topleft.w3-container.w3-padding-32
+            a(href='https://www.zomato.com/manila/insta-worthy-places')
+              span.w3-black.w3-padding-large.w3-animate-bottom Instaworthy Places
+        .w3-display-container.mySlides
+          img(src='https://b.zmtcdn.com/data/collections/0ccd928cfd10b7242d749766032f7af4_1476701307.jpg', style='width:100%')
+          .w3-display-bottomright.w3-container.w3-padding-32
+            a(href='https://www.zomato.com/manila/best-new-restaurants')
+              span.w3-black.w3-padding-large.w3-animate-bottom Newly Opened
+        .w3-display-container.mySlides
+          img(src='https://b.zmtcdn.com/data/collections/813a7ba2c344d520045b2ead8af4fcc1_1440994157.jpg', style='width:100%')
+          .w3-display-middle.w3-container.w3-padding-32
+            a(href='https://www.zomato.com/manila/korean-bbq')
+              span.w3-black.w3-padding-large.w3-animate-bottom Best Korean Barbecue
+        .w3-container.w3-gray.w3-padding-8.w3-xlarge
+          .w3-left(onclick='plusDivs(-1)')
+            i.fa.fa-arrow-circle-left.w3-hover-text-teal
+          .w3-right(onclick='plusDivs(1)')
+            i.fa.fa-arrow-circle-right.w3-hover-text-teal
+          
+
+        
+
+    #about.w3-container.w3-padding-64.w3-blue-gray.w3-xlarge
+      .w3-content
+        h1.w3-center.w3-jumbo(style='margin-bottom:64px') About
+        p
+          .w3-card-2.w3-round.w3-light-gray
+            .w3-container.w3-black
+              h4.w3-center.w3-xlarge About Us
+              .w3-center.w3-gray
+                    img.w3-circle(src='images/elijah.png', style='height:300px;width:210px', alt='Avatar')
+                    img.w3-circle(src='images/pier.png', style='height:300px;width:210px', alt='Avatar')
+              hr
+              p
+                i.fa.fa-user-circle-o.fa-fw.w3-margin-right.w3-text-theme
+                strong  John Elijah B. de Asis and Pierangelo P. Martin
+              p
+                i.fa.fa-graduation-cap.fa-fw.w3-margin-right.w3-text-theme
+                strong  Bachelor of Science in Computer Engineering
+              p
+                i.fa.fa-pencil.fa-fw.w3-margin-right.w3-text-theme
+                strong  Polytechnic University of the Philippines - Manila
+              p
+                i.fa.fa-facebook-square.fa-fw.w3-margin-right.w3-text-theme
+                strong
+                   a(href='https://www.facebook.com/elijahdeasis30.el')  Elijah  
+                   | and  
+                   a(href='https://www.facebook.com/pierremrtin')  Pier
+
+        p
+          | This web application is created by John Elijah B. de Asis and Pierangelo P. Martin for education purposes. This web application contains the Top Restaurants in Manila in the year 2017 according to  
+          strong Zomato  
+          | . These restaurants are the most popular based on popularity to customers and critics. You can add restaurant to the list, edit and delete them.
+        
+        p
+          strong What Zomato do?
+          |  Zomato's mission is to ensure that nobody has a bad meal. They do this by helping people discover great places around them, building amazing experiences around dining and enabling restaurants to create amazing experiences.
+          a(href='https://www.zomato.com/manila/top-restaurants')
+            img.w3-circle.w3-right(src='https://b.zmtcdn.com/images/logo/zomato_logo.svg', style='width:150px', alt='Zomato')
+        p They also have different themes like Restaurant Against Hunger. You can check participating restaurants for Restaurants Against Hunger  
+          a(href='https://www.zomato.com/manila/restaurants-against-hunger') here 
+        img.w3-margin-top.w3-margin-bottom(src='https://b.zmtcdn.com/data/collections/466945a5b00280d51aff8ae17907a41a_1480064490.jpg', style='width:100%', alt='Restaurant')
+
+        h1
+          b To Find more best restaurants, cafes, and bars in Metro Manila, you can visit zomato.com! 
+
+
+    #googleMap.w3-grayscale-max(style='width:100%;height:400px;')
+   
+    footer.w3-center.w3-black.w3-padding-48.w3-xxlarge
+      i.fa.fa-github.w3-hover-text-yellow
+      i.fa.fa-facebook-official.w3-hover-text-indigo
+      i.fa.fa-instagram.w3-hover-text-purple
+      i.fa.fa-pinterest-p.w3-hover-text-red
+      i.fa.fa-twitter.w3-hover-text-light-blue
+      i.fa.fa-linkedin.w3-hover-text-indigo
+      p 
+        h6
+          span.w3-xlarge © 2017 COEN 3463 Team 12
+    
+    
+    script(src='https://maps.googleapis.com/maps/api/js')
+    script.
+      // Google Map Location
+      var myCenter = new google.maps.LatLng(14.6090537, 121.0222565);
+      function initialize() {
+      var mapProp = {
+      center: myCenter,
+      zoom: 12,
+      scrollwheel: false,
+      draggable: true,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      var marker = new google.maps.Marker({
+      position: myCenter,
+      });
+      ;
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+      // Tabbed Menu
+      function openMenu(evt, menuName) {
+      var i, x, tablinks;
+      x = document.getElementsByClassName("menu");
+      for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+      }
+      document.getElementById(menuName).style.display = "block";
+      evt.currentTarget.firstElementChild.className += " w3-red";
+      }
+      document.getElementById("myLink").click();
+
+    script.
+      var slideIndex = 1;
+      showDivs(slideIndex);
+      function plusDivs(n) {
+      showDivs(slideIndex += n);
+      }
+      function currentDiv(n) {
+      showDivs(slideIndex = n);
+      }
+      function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demodots");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length} ;
+      for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" w3-white", "");
+      }
+      x[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " w3-white";
+      }
