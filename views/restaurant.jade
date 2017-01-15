@@ -64,6 +64,11 @@ block content
           p.w3-padding.w3-center 
             img(src="#{restaurant.photo}" alt="picture" style='width:100%')
           p
+            i.w3-padding.fa.fa-picture-o.fa-2.fa-fw(style='width:70px;')
+            |  Other photos here:  
+            a(href='#{restaurant.photoslink}')
+              strong  #{restaurant.photoslink}
+          p
             i.w3-padding.fa.fa-calendar.fa-2.fa-fw(style='width:70px;')
             |  Creation Date of Entry:
             strong   #{restaurant.createdate}
