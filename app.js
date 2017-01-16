@@ -4,7 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var moment = require('moment');
+var moment = require('moment-timezone');
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -84,7 +85,7 @@ MongoClient.connect(mdbUrl, function(err, database) {
             zomato: req.body.zomato,
             photo: req.body.photo,
             photoslink: req.body.photoslink,
-            createdate: moment().format('LLL'),
+            createdate: moment().tz("Asia/Manila").format('LLL'),
         };
         db.collection('restaurants')
           .save(dataToSave, function(err, restaurant){
@@ -131,7 +132,7 @@ MongoClient.connect(mdbUrl, function(err, database) {
             zomato: req.body.zomato,
             photo: req.body.photo,
             photoslink: req.body.photoslink,
-            updatedate: moment().format('LLL'),
+            updatedate: moment().tz("Asia/Manila").format('LLL'),
         };
         restaurantCollection.updateOne({ _id: new ObjectId(restaurantId)},{$set: datasave}, function(err, restaurant) {
             if(err){
