@@ -4,13 +4,13 @@ block content
     .w3-top.w3-hide-small
       ul#myNavbar.w3-navbar.w3-xlarge.w3-black.w3-opacity.w3-hover-opacity-off
         li
-          a(href='/') HOME
+          a(href='/home') HOME
         li
           a(href='/restaurants') RESTAURANTS
         li
           a(href='/restaurants/create') ADD A RESTAURANT
         li
-          a(href='/about') ABOUT
+          a(href='/restaurants/about') ABOUT
     .w3-container.w3-padding-64.w3-blue-grey.w3-xlarge
       .w3-content
         a(href='https://www.zomato.com/manila/top-restaurants')
@@ -20,24 +20,24 @@ block content
         p.w3-xxlarge
           strong You are editing the information of the restaurant
 
-        form(method='POST', action='/restaurant/#{edit._id}/edit')
-          p
+        form(method='POST', action='/restaurants/#{edit._id}/edit')
+          p  Name:
             input.w3-input.w3-padding-16.w3-border(type='text', value='#{edit.name}', required='', name='name')
-          p
+          p  Address:
             input.w3-input.w3-padding-16.w3-border(type='text', value='#{edit.address}', required='', name='address')
-          p
+          p  Description:
             input.w3-input.w3-padding-16.w3-border(type='text', value='#{edit.description}', required='', name='description')
-          p
+          p  Cuisine:
             input.w3-input.w3-padding-16.w3-border(type='text', value='#{edit.cuisine}', required='', name='cuisine')
-          p
+          p  Google Map Link:
             input.w3-input.w3-padding-16.w3-border(type='text', value='#{edit.maplink}', required='', name='maplink')
-          p
+          p  Contact:
             input.w3-input.w3-padding-16.w3-border(type='text', value='#{edit.contact}', required='', name='contact')
-          p
+          p  Zomato Link:
             input.w3-input.w3-padding-16.w3-border(type='text', value='#{edit.zomato}', required='', name='zomato')
-          p
+          p  Photo:
             input.w3-input.w3-padding-16.w3-border(type='text', value='#{edit.photo}', required='', name='photo')
-          p
+          p  Photo Links:
             input.w3-input.w3-padding-16.w3-border(type='text', value='#{edit.photoslink}', required='', name='photoslink')
 
           

@@ -1,0 +1,52 @@
+extends layout
+
+block content
+    .w3-top.w3-hide-small
+      ul#myNavbar.w3-navbar.w3-xlarge.w3-black.w3-opacity.w3-hover-opacity-off
+        li
+          a(href='/home') HOME
+        li
+          a(href='/restaurants') RESTAURANTS
+        li
+          a(href='/restaurants/create') ADD A RESTAURANT
+        li
+          a(href='/restaurants/about') ABOUT
+
+    header.bgimg.w3-display-container
+      
+      .w3-display-middle.w3-center
+        span.w3-text-black.w3-hide-small.w3-jumbo(style='font-size:100px')
+          strong
+            if (user)
+              p Welcome to our webapp, #{user.username} !
+                br
+                a(href="/auth/logout")  Logout
+            else
+              p
+                |  Welcome to our webapp!
+              p
+                a(href="/auth/login") Login
+                |  or
+                a(href="/auth/register")  Register
+        span.w3-text-white.w3-hide-large.w3-hide-medium(style='font-size:60px')
+          b
+            | 2016 Top
+            br
+            | Manila Restaurants
+        p
+          a.w3-xxlarge.w3-padding(href='#')
+        
+        p
+          a.w3-btn.w3-xxlarge.w3-padding(href='/restaurants') View Restaurants
+        
+    footer.w3-center.w3-black.w3-padding-48.w3-xxlarge
+      a(href='https://github.com/deasisjohnelijah/coen3463-m3t12')
+        i.fa.fa-github.w3-hover-text-yellow
+      i.fa.fa-facebook-official.w3-hover-text-indigo
+      i.fa.fa-instagram.w3-hover-text-purple
+      i.fa.fa-pinterest-p.w3-hover-text-red
+      i.fa.fa-twitter.w3-hover-text-light-blue
+      i.fa.fa-linkedin.w3-hover-text-indigo
+      p 
+        h6
+          span.w3-xlarge © 2017 COEN 3463 Team 12
