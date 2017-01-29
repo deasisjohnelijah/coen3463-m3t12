@@ -29,12 +29,7 @@ router.get('/login', function(req, res, next) {
 router.post('/login',
   passport.authenticate('local', { failureRedirect: '/auth/login' }),
   function(req, res) {
-    if(err) {
-        return res.render('login', {error: err});
-      }
-    req.login(account, function(err) {
-        res.redirect('/restaurants');
-      });
+    res.redirect('/restaurants');
   });
 
 router.all('/logout', function(req, res, next) {

@@ -7,15 +7,15 @@ var mongoose = require('mongoose'),
 
 var User = new Schema({
 	username:  {
-		type: [String,'Username is Incorrect'],
+		type: String,
 		validate: {
           validator: function(z) {
             return /^([a-zA-z]{8,})$/.test(z);
           },
-          message: 'Invalid Username!'
+          message: 'Invalid Username! Must have at least 8 alpha characters, Must not have numbers and special characters'
         },
 	},
-	password: [String,'Password is Incorrect'],
+	password: String,
 	first_name: String,
 	last_name: String,
 	email: {
