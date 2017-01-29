@@ -21,7 +21,7 @@ var User = new Schema({
 	first_name: String,
 	last_name: String,
 	email: {
-		type: String,
+		type: [String,'Email must be filled']
 		required: true,
 		validate: {
           validator: function(v) {
