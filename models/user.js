@@ -8,6 +8,7 @@ var mongoose = require('mongoose'),
 var User = new Schema({
 	username:  {
 		type: String,
+		required: true,
 		validate: {
           validator: function(z) {
             return /^([a-zA-z]{8,})$/.test(z);
@@ -16,13 +17,14 @@ var User = new Schema({
         },
 	},
 	password: {
-		type: [String,'Must enter a password'],
+		type: String,
+		required: true, 
+		message: 'Password is required'
 	},
 	first_name: String,
 	last_name: String,
 	email: {
-		type: [String,'Email must be filled'],
-		required: true,
+		type: String,
 		validate: {
           validator: function(v) {
             return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(v);
