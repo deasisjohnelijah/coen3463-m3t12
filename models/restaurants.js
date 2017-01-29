@@ -5,11 +5,12 @@ var RestaurantSchema = new Schema({
   // id is created automatically
   name: {
     type: String,
-    required: true
+    required: [true, 'Fill up Name']
+    
   },
   address: {
     type: String,
-    required: true
+    required: [true, 'Fill up Address']
   },
  
   description: String,

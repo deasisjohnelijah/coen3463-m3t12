@@ -2,14 +2,32 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     passportLocalMongoose = require('passport-local-mongoose');
 
-require('mongoose-type-email');
+
+
 
 var User = new Schema({
-	username: String,
-	password: String,
+	username:  {
+		type: [String,'Username is Incorrect'],
+		validate: {
+          validator: function(z) {
+            return /^([a-zA-z]{8,})$/.test(z);
+          },
+          message: 'Invalid Username!'
+        },
+	},
+	password: [String,'Password is Incorrect'],
 	first_name: String,
 	last_name: String,
-	email: String,
+	email: {
+		type: String,
+		required: true,
+		validate: {
+          validator: function(v) {
+            return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(v);
+          },
+          message: 'Invalid Email!'
+        },
+    }
 });
 
 User.plugin(passportLocalMongoose);

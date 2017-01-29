@@ -32,7 +32,7 @@ router.post('/create', function(req, res) {
       
     }).save(function(err, restaurant, count) {
       if(err) {
-        res.status(400).send('Error saving new restaurant: ' + err);
+        res.render('create', {error: err});
       } else {
         res.redirect('/restaurants');
       }

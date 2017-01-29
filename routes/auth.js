@@ -12,7 +12,7 @@ router.route('/register')
     User.register(new User({username: req.body.username, first_name: req.body.full_name, last_name:req.body.last_name, email:req.body.email
     }), req.body.password, function(err, account) {
       if(err) {
-        return res.render('register', {account: account});
+        return res.render('register', {error: err});
       }
 
       req.login(account, function(err) {
@@ -29,7 +29,12 @@ router.get('/login', function(req, res, next) {
 router.post('/login',
   passport.authenticate('local', { failureRedirect: '/auth/login' }),
   function(req, res) {
-    res.redirect('/restaurants');
+    if(err) {
+        return res.render('login', {error: err});
+      }
+    req.login(account, function(err) {
+        res.redirect('/restaurants');
+      });
   });
 
 router.all('/logout', function(req, res, next) {

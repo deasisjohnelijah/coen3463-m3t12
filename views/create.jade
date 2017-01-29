@@ -27,26 +27,33 @@ block content
         p.w3-xxlarge
           strong Fill Up
           |  this form here to add one top restaurant!
-        
+        if (error)
+          strong.w3-text-red.w3-jumbo #{error}
         form(method='POST', action='/restaurants/create')
-          p  Name:
-            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Name", required='', name='name')
-          p  Address:
-            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Address", required='', name='address')
+          p  
+            | Name
+            strong.w3-text-red *
+            | :
+            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Name", name='name')
+          p  
+            | Address
+            strong.w3-text-red *
+            | :
+            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Address", name='address')
           p  Description:
-            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Description", required='', name='description')
+            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Description", name='description')
           p  Cuisine:
-            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Cuisine", required='', name='cuisine')
+            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Cuisine", name='cuisine')
           p  Google Map Link:
-            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Google Map Link of the Restaurant", required='', name='maplink')
+            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Google Map Link of the Restaurant", name='maplink')
           p  Contact:
-            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Contact Number", required='', name='contact')
+            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Contact Number", name='contact')
           p  Zomato Link:
-            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Zomato Link", required='', name='zomato')
+            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Zomato Link", name='zomato')
           p  Photo:
-            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Photo", required='', name='photo')
+            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Photo", name='photo')
           p  Photo Links:
-            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Photos Link", required='', name='photoslink')
+            input.w3-input.w3-padding-16.w3-border(type='text', placeholder="Restaurant's Photos Link", name='photoslink')
           
           p
             button.w3-btn-block.w3-padding(type='submit') Add to Top Restaurants
