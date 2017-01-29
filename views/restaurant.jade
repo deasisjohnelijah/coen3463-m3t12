@@ -10,7 +10,7 @@ block content
         li
           a(href='/restaurants/create') ADD A RESTAURANT
         li
-          a(href='/restaurants/about') ABOUT
+          a(href='/about') ABOUT
 
     .w3-container.w3-padding-64.w3-blue-grey.w3-xlarge
       .w3-content
@@ -49,12 +49,12 @@ block content
           p
             i.w3-padding.fa.fa-users.fa-2.fa-fw(style='width:70px;') 
             |  Zomato Link:
-            a(href='#{restaurant.zomato}')
+            a(href='#{restaurant.zomato}' target='_blank')
               strong   #{restaurant.zomato}
           p
             i.w3-padding.fa.fa-map-marker.fa-2.fa-fw(style='width:70px;') 
             |  Google Map Link:
-            a(href='#{restaurant.maplink}')
+            a(href='#{restaurant.maplink}' target='_blank')
               strong  #{restaurant.maplink}
           p
             i.w3-padding.fa.fa-picture-o.fa-2.fa-fw(style='width:70px;')
@@ -66,7 +66,7 @@ block content
           p
             i.w3-padding.fa.fa-picture-o.fa-2.fa-fw(style='width:70px;')
             |  Other photos here:  
-            a(href='#{restaurant.photoslink}')
+            a(href='#{restaurant.photoslink}' target='_blank')
               strong  #{restaurant.photoslink}
           p
             i.w3-padding.fa.fa-calendar.fa-2.fa-fw(style='width:70px;')

@@ -11,4 +11,5 @@ router.get('/home', function(req, res) {
 router.get('/about', function(req, res) {
   res.render('about', { title: 'Top Manila Restaurants 2017' });
 });
+
 module.exports = router;

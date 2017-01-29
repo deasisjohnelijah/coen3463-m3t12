@@ -15,7 +15,9 @@ var User = new Schema({
           message: 'Invalid Username! Must have at least 8 alpha characters, Must not have numbers and special characters'
         },
 	},
-	password: String,
+	password: {
+		type: [String,'Must enter a password'],
+	},
 	first_name: String,
 	last_name: String,
 	email: {

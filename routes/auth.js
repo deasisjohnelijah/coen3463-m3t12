@@ -24,12 +24,14 @@ router.route('/register')
 router.get('/login', function(req, res, next) {
   res.render('login', {user: req.user});
 });
-
+router.get('/login-', function(req, res, next) {
+  res.render('login-', {user: req.user});
+});
 
 router.post('/login',
-  passport.authenticate('local', { failureRedirect: '/auth/login' }),
+  passport.authenticate('local', { failureRedirect: '/auth/login-' }),
   function(req, res) {
-    res.redirect('/restaurants');
+    res.redirect('/home');
   });
 
 router.all('/logout', function(req, res, next) {
