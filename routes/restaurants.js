@@ -13,7 +13,7 @@ router.use(function(req, res, next) {
 
 router.get('/', function(req, res) {
   Restaurant.find( function(err, restaurants, count) {
-    res.render('restaurants', {restaurants: restaurants});
+    res.render('restaurants', {restaurants: restaurants,user: req.user});
   })
 });
 
@@ -40,7 +40,7 @@ router.post('/create', function(req, res) {
 });
 
 router.get('/create', function(req, res) {
-  res.render('create', {restaurant: {}});
+  res.render('create', {restaurant: {}, user: req.user});
 });
 
 
@@ -83,7 +83,7 @@ router.route('/:restaurant_id/edit')
   })
 
   .get(function(req, res) {
-    res.render('edit', {edit: restaurant, moment: moment});
+    res.render('edit', {edit: restaurant, moment: moment, user: req.user});
   })
   .post(function(req, res) {
 

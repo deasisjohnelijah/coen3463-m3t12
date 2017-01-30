@@ -11,6 +11,18 @@ block content
           a(href='/restaurants/create') ADD A RESTAURANT
         li
           a(href='/about') ABOUT
+        .w3-display-right
+          if (user)
+              li
+                h3 Welcome to our webapp, 
+                  strong #{user.username}!        
+              li
+                a(href="/auth/logout")  Logout
+          else
+              li
+                a(href='/auth/login') LOGIN
+              li
+                a(href='/auth/register') REGISTER
 
     header.bgimg.w3-display-container
       
@@ -18,12 +30,13 @@ block content
         span.w3-text-black.w3-hide-small.w3-jumbo(style='font-size:100px')
           strong
             if (user)
-              p Welcome to our webapp, #{user.username}!
+              p(style='font-size:100px')
+                | 2016 Top
                 br
-                a(href="/auth/logout")  Logout
+                | Manila Restaurants
             else
               p
-                |  Welcome to our webapp!
+                |  Login or Register Now to access our webapp!
               p
                 a(href="/auth/login") Login
                 |  or

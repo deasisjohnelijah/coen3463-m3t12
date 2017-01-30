@@ -9,8 +9,18 @@ block content
           a(href='/restaurants') RESTAURANTS
         li
           a(href='/restaurants/create') ADD A RESTAURANT
-        li
-          a(href='/about') ABOUT
+        .w3-display-right
+          if (user)
+              li
+                h3 Welcome to our webapp, 
+                  strong #{user.username}!        
+              li
+                a(href="/auth/logout")  Logout
+          else
+              li
+                a(href='/auth/login') LOGIN
+              li
+                a(href='/auth/register') REGISTER
 
     .w3-container.w3-padding-64.w3-blue-grey.w3-xlarge
       .w3-content

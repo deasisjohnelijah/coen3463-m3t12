@@ -11,6 +11,18 @@ block content
           a(href='/restaurants/create') ADD A RESTAURANT
         li
           a(href='#about') ABOUT
+        .w3-display-right
+          if (user)
+              li
+                h3 Welcome to our webapp, 
+                  strong #{user.username}!        
+              li
+                a(href="/auth/logout")  Logout
+          else
+              li
+                a(href='/auth/login') LOGIN
+              li
+                a(href='/auth/register') REGISTER
         
     
 
@@ -20,20 +32,21 @@ block content
           span.w3-tag.w3-xlarge From Zomato.com
       .w3-display-middle.w3-center
         span.w3-text-black.w3-hide-small(style='font-size:100px')
-          | 2016 Top
-          br
-          | Manila Restaurants
+          strong
+            | 2016 Top
+            br
+            | Manila Restaurants
           strong.w3-xlarge
-            if (user)
-              p Welcome to our Webapp, #{user.username}!
-                br
-                a(href="/auth/logout")  Logout
-            else
+            //- if (user)
+            //-   p Welcome to our Webapp, #{user.username}!
+            //-     br
+            //-     a(href="/auth/logout")  Logout
+            //- else
               
-              p
-                a(href="/auth/login") Login
-                |  or
-                a(href="/auth/register")  Register 
+            //-   p
+            //-     a(href="/auth/login") Login
+            //-     |  or
+            //-     a(href="/auth/register")  Register 
         span.w3-text-white.w3-hide-large.w3-hide-medium(style='font-size:60px')
           b
             | 2016 Top
