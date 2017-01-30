@@ -18,7 +18,6 @@ var User = new Schema({
 	},
 	password: {
 		type: String,
-		required: true 
 	},
 	first_name: String,
 	last_name: String,

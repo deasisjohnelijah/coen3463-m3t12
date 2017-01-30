@@ -9,11 +9,11 @@ router.route('/register')
     res.render('register', {});
   })
   .post(function(req, res, next) {
-    User.register(new User({username: req.body.username, first_name: req.body.full_name, last_name:req.body.last_name, email:req.body.email, password:req.body.password,
+    User.register(new User({username: req.body.username, first_name: req.body.full_name, last_name:req.body.last_name, email:req.body.email
     }),req.body.password, function(err, account) {
       if(err) {
         console.log(err)
-        return res.render('register', {error: err});
+        return res.render('register', {error: err, account: account});
       }
 
       req.login(account, function(err) {
