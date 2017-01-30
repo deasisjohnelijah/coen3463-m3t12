@@ -56,7 +56,7 @@ router.route('/:restaurant_id')
   })
 
   .get(function(req, res) {
-    res.render('restaurant', {restaurant: restaurant, moment: moment});
+    res.render('restaurant', {restaurant: restaurant, moment: moment, user: req.user});
   })
 
   // .post(function(req, res) {
