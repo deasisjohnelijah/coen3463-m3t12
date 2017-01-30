@@ -18,8 +18,7 @@ var User = new Schema({
 	},
 	password: {
 		type: String,
-		required: true, 
-		message: 'Password is required'
+		required: true 
 	},
 	first_name: String,
 	last_name: String,
