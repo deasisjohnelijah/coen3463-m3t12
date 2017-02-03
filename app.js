@@ -10,7 +10,6 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 var auth = require('./routes/auth');
@@ -30,7 +29,6 @@ mongoose.connect(MongoURI, function(err, res) {
     }
 });
 
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
