@@ -11,14 +11,47 @@ app.use(methodOverride());
 
 mongoose.connect('mongodb://elijahdeasis:elijahdeasis30@ds111469.mlab.com:11469/coen3463-t12');
 
-restify.serve(router, mongoose.model('Customer', new mongoose.Schema({
-  name: { type: String, required: true },
-  comment: { type: String }
+restify.serve(router, mongoose.model('Restaurant', new mongoose.Schema({
+  name: {
+
+    type: String,
+
+    required: [true, 'Fill up Name']
+
+    
+
+  },
+
+  address: {
+
+    type: String,
+
+    required: [true, 'Fill up Address']
+
+  },
+
+ 
+
+  description: String,
+
+  cuisine: String,
+
+  maplink: String,
+
+  contact: String,
+
+  zomato: String,
+
+  photo: String,
+
+  photoslink: String,
+
+  createdate: String,
+
+  updatedate: String,
 })));
 
 app.use(router);
 
-app.listen(3000, () => {
-  console.log('Express server listening on port 3000')
-});
+
 module.exports = app;
