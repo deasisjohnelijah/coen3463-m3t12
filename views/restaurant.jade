@@ -83,7 +83,7 @@ block content
           p
             i.w3-padding.fa.fa-calendar.fa-2.fa-fw(style='width:70px;')
             |  Creation Date of Entry:
-            strong   #{restaurant.createdate}
+            strong   #{moment(restaurant.createdate).format("LLL")}
           p
             i.w3-padding.fa.fa-calendar-check-o.fa-2.fa-fw(style='width:70px;') 
             |  Update Date of Entry:

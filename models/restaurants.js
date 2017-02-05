@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var moment = require('moment-timezone');
 
 var RestaurantSchema = new Schema({
 
@@ -24,7 +25,10 @@ var RestaurantSchema = new Schema({
   zomato: String,
   photo: String,
   photoslink: String,
-  createdate: String,
+  createdate: {
+
+    type: Date,
+  },
   updatedate: String,
 
 });

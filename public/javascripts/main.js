@@ -20,7 +20,7 @@ $('#delete').on('click', function(e){
 
 if (window.location.pathname === '/restaurants') {
 
-  fetch('api/v1/Restaurant').then(function(res) {
+  fetch('/api/v1/Restaurant/?sort=createdate').then(function(res) {
     res.json().then(function(restaurants) {
       console.log('restaurants', restaurants);
       var tbody = document.getElementById('table-body');
@@ -37,6 +37,15 @@ if (window.location.pathname === '/restaurants') {
       var count = document.getElementById('count');
       
         count.insertAdjacentHTML('beforeend', '<strong>Total number of Restaurants:  '+restaurants.count+'<strong>');
+
+      
+    })
+  });
+
+  fetch('api/v1/Restaurant?sort=createdate').then(function(res) {
+    res.json().then(function(restaurants) {
+      console.log('restaurants', restaurants);
+      
 
       
     })
