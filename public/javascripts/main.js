@@ -42,13 +42,16 @@ if (window.location.pathname === '/restaurants') {
     })
   });
 
-  fetch('api/v1/Restaurant?sort=createdate').then(function(res) {
+  fetch('api/v1/Restaurant?query={"name":"~^('+restaurant.search+')"}').then(function(res) {
     res.json().then(function(restaurants) {
       console.log('restaurants', restaurants);
-      
+      var tbody = document.getElementById('table-body');
+      restaurants.forEach(function(restaurant) {
+        tbody.insertAdjacentHTML('beforeend', '<tr> <td><img src="'+ restaurant.photo + '" style="width:200px"></td> <td>  <a href="/restaurants/' + restaurant._id + '">' + restaurant.name + '</a></td> <td> ' + restaurant.address + '</td> <td>' + restaurant.cuisine + ' </td> <td><a href="'+ restaurant.zomato + '" target="_blank">' + restaurant.zomato + ' </td> </tr>');
 
-      
+      });
     })
   });
+ 
 
 }
