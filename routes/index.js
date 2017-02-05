@@ -9,7 +9,7 @@ router.get('/home', function(req, res) {
   res.render('home', { title: 'Top Manila Restaurants 2017', user: req.user });
 });
 router.get('/about', function(req, res) {
-  res.render('about', { title: 'Top Manila Restaurants 2017' user: req.user });
+  res.render('about', { title: 'Top Manila Restaurants 2017', user: req.user });
 });
 
 module.exports = router;
