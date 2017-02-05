@@ -10,6 +10,10 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+const methodOverride = require('method-override');
+const restify = require('express-restify-mongoose');
+const router = express.Router();
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var auth = require('./routes/auth');
@@ -19,15 +23,6 @@ var home = require('./routes/home');
 
 
 var MongoURI = 'mongodb://elijahdeasis:elijahdeasis30@ds111469.mlab.com:11469/coen3463-t12'
-//var MongoURI = 'mongodb://localhost/test';
-
-mongoose.connect(MongoURI, function(err, res) {
-    if (err) {
-        console.log('Error connecting to ' + MongoURI);
-    } else {
-        console.log('MongoDB connected!');
-    }
-});
 
 var app = express();
 
@@ -56,6 +51,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 var User = require('./models/user');
+var Restaurant = require('./models/restaurants');
 passport.use(User.createStrategy());
 
 passport.serializeUser(User.serializeUser());
@@ -64,6 +60,17 @@ passport.deserializeUser(User.deserializeUser());
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+mongoose.connect(MongoURI, function(err, res) {
+    if (err) {
+        console.log('Error connecting to ' + MongoURI);
+    } else {
+        console.log('MongoDB connected!');
+    }
+});
+
+restify.serve(router, Restaurant);
+app.use(router);
 
 app.use('/', index);
 app.use('/users', users);

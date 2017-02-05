@@ -13,11 +13,11 @@ router.use(function(req, res, next) {
 
 router.get('/', function(req, res) {
   Restaurant.find( function(err, restaurants, count) {
-    res.render('restaurants', {restaurants: restaurants,user: req.user});
+    res.render('restaurants', {restaurants: restaurants, user: req.user});
   })
 });
 
-router.post('/create', function(req, res) {
+router.post('/', function(req, res) {
     new Restaurant({
       name: req.body.name,
       address: req.body.address,

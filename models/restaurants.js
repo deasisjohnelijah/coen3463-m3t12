@@ -1,27 +1,15 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const methodOverride = require('method-override');
-const mongoose = require('mongoose');
-const restify = require('express-restify-mongoose');
-const app = express();
-const router = express.Router();
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-app.use(bodyParser.json());
-app.use(methodOverride());
+var restaurantSchema = new Schema({
 
-mongoose.connect('mongodb://elijahdeasis:elijahdeasis30@ds111469.mlab.com:11469/coen3463-t12');
-
-restify.serve(router, mongoose.model('Restaurant', new mongoose.Schema({
+  // id is created automatically
   name: {
 
     type: String,
 
     required: [true, 'Fill up Name']
-
-    
-
   },
-
   address: {
 
     type: String,
@@ -29,29 +17,16 @@ restify.serve(router, mongoose.model('Restaurant', new mongoose.Schema({
     required: [true, 'Fill up Address']
 
   },
-
- 
-
   description: String,
-
   cuisine: String,
-
   maplink: String,
-
   contact: String,
-
   zomato: String,
-
   photo: String,
-
   photoslink: String,
-
   createdate: String,
-
   updatedate: String,
-})));
 
-app.use(router);
+});
 
-
-module.exports = app;
+module.exports = mongoose.model('Restaurant', restaurantSchema);
