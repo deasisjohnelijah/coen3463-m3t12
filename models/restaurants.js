@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var restaurantSchema = new Schema({
+var RestaurantSchema = new Schema({
 
   // id is created automatically
   name: {
@@ -29,4 +29,4 @@ var restaurantSchema = new Schema({
 
 });
 
-module.exports = mongoose.model('Restaurant', restaurantSchema);
+module.exports = mongoose.model('Restaurant', RestaurantSchema);
