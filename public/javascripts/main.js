@@ -67,11 +67,25 @@ if (window.location.pathname === '/restaurants') {
 
     fetch('/api/v1/Restaurant?query={"name":"~(' + localStorage.getItem("search") + ')"}').then(function(res) {
       res.json().then(function(result) {
+        if (result.length === 0) {
+          document.getElementById('findcount').innerHTML = " " + result.length +
+        " restaurant found";
+        }
+        else if (result.length === 1) {
+          document.getElementById('findcount').innerHTML = "There is " + result.length +
+        " restaurant found";
+        }
+        else {
+          document.getElementById('findcount').innerHTML = "There are " + result.length +
+        " restaurants found";
+        }
+
         var tbody = document.getElementById('table-body');
         result.forEach(function(result) {
          tbody.insertAdjacentHTML('beforeend', '<tr> <td><img src="'+ result.photo + '" style="width:200px"></td> <td>  <a href="/restaurants/' + result._id + '">' + result.name + '</a></td> <td> ' + result.address + '</td> <td>' + result.cuisine + ' </td> <td><a href="'+ result.zomato + '" target="_blank">' + result.zomato + ' </td> </tr>' );
 
-
+        
+  
 
         });
 

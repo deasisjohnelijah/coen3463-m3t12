@@ -33,10 +33,11 @@ block content
           b Zomato
           | . You can add, edit and delete them if there's an update to the list.
         p#count.w3-xxlarge 
+        p#findcount.w3-xxlarge
         form(method= 'post', action= '/restaurants', onsubmit= 'getSearch()')
                     .input-field
                       input#search(type='search', placeholder="Find a restaurant")
-                      label.label-icon(for= 'search')
+                      label(for= 'search')
                         i.fa.fa-search.small
           
 
