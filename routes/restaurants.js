@@ -17,7 +17,9 @@ router.get('/', function(req, res) {
   })
 });
 
-
+router.post('/', function(req, res){ 
+  res.redirect('/restaurants') 
+}); 
 
 router.post('/create', function(req, res) {
     new Restaurant({

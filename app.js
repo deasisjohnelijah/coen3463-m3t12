@@ -80,6 +80,11 @@ app.use('/about',about);
 app.use('/restaurants/', restaurants);
 app.use('/home', home);
 
+app.get('/search', function(req, res){
+
+  res.render('search');
+
+});
 // app.get('/home', function(req, res) {
 //   res.render('home');
 // });
